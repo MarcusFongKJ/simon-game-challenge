@@ -81,6 +81,13 @@ $(document).keypress(function() {
     }
 })
 
+$('#level-title').click(function() {
+    if (gamePattern.length == 0) {
+        userClickedPattern.splice(0, userClickedPattern.length);    // in case user clicks on buttons before starting the round
+        setTimeout(nextSequence, 500);
+    }
+})
+
 function checkAnswer() {
     for (let i = 0; i < userClickedPattern.length; i++) {
         if (userClickedPattern[i] != gamePattern[i]) {
